@@ -81,3 +81,78 @@ install.packages("swirl")
 library(swirl)
 install_from_swirl("R Programming")
 swirl()
+
+
+# While loop
+count <- 0
+while(count < 10) {
+  print(count)
+  count <- count + 1
+}
+
+#
+z <- 5
+
+while(z >= 3 && z <= 10){
+  print(z)
+  coin <- rbinom(1, 1, 0.5)
+  
+  if(coin == 1) { 
+    z <- z + 1
+  } else {
+    z <- z - 1
+  }
+}
+
+
+
+
+add2 <- function(x, y){
+  x + y
+}
+
+add2(3,5)
+
+
+
+above10 <- function(x){
+  use <- x > 10
+  x[use]
+}
+
+
+above <- function(x, n){
+  use <- x > n
+  x[use]
+}
+
+x <- 1:20
+
+above(x, 5)
+above10(x)
+
+
+above2 <- function(x, n = 10){
+  use <- x > n
+  x[use]
+}
+
+above2(x)
+
+above2(x,15)
+
+
+columnmean <- function(x, removeNA = TRUE){
+  nc <- ncol(x)
+  means <- numeric(nc)
+  for(i in 1:nc){
+    means[i] <- mean(x[,i], na.rm = removeNA)
+  }
+  means
+}
+
+columnmean(airquality)
+
+
+
+
